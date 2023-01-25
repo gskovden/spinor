@@ -1,4 +1,22 @@
 .plan__img {
 	margin: 0;
-	width: 800px;
+	width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+	.plan__img {
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.plan__img {
+		width: 270px;
+	}
+}
+
+@media screen and (max-width: 330px) {
+	.plan__img {
+		width: 230px;
+	}
 }
