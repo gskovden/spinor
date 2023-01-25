@@ -11,6 +11,22 @@
           emailjs.init('18doDoRxEuYwjBvzD');
       })();
   </script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(92181197, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/92181197" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
 
 <body class="page">
@@ -37,7 +53,7 @@
         <img src="<%=require('../src/images/header/phone.svg')%>" alt="телефон" class="header__img">
         <p class="header__tel">+7 903 807-08-88</p>
       </a>
-      <a class="header__call">Заказать консультацию</a>
+      <a class="header__call">Получить консультацию</a>
     </div>
     <div class="header__burger-type">
       <div class="header__burger-links">
@@ -50,7 +66,7 @@
           <li class="header__link"><a class="header__item" href="./index.html#photo">Фото</a></li>
           <li class="header__link"><a class="header__item" href="./index.html#contacts">Контакты</a></li>
         </ul>
-        <a class="header__consult-burger">Заказать консультацию</a>
+        <a class="header__consult-burger">Получить консультацию</a>
         <a class="header__area" href="tel:+79038070888">
           <img src="<%=require('../src/images/header/phone.svg')%>" alt="телефон" class="header__img">
           <p class="header__burger-link">+7 903 807-08-88</p>
@@ -96,7 +112,7 @@
       <p class="history__caption">Ботанический сад ТвГУ</p>
       <p class="history__text">Летом можно совершить прогулку на сапе по реке Тьмаке. Маршрут обычно проходит мимо Ландшафтного парка, Центрального рынка, Обелиска Победы. А можно доплыть до Монастырского моста и места впадения Тьмаки в Волгу.</p>
       <img src="<%=require('../src/images/history/river.webp')%>" alt="церковь Михаила Тверского" class="history__img">
-      <p class="history__caption">Церколь Михаила Тверского</p>
+      <p class="history__caption">Церковь Михаила Тверского</p>
     </div>
   </section>
 
@@ -108,6 +124,7 @@
               <h2 class="footer__title">Спинор</h2>
             </div>
             <p class="footer__address">г. Тверь, ул. Академика Туполева, д. 111</p>
+            <a class="footer__personal" href="./privacy.html" target="_blank">Политика конфиденциальности</a>
           </div>
           <ul class="footer__links">
             <li class="footer__ref"><a class="footer__ref" href="./index.html#main">Главная</a></li>
@@ -120,7 +137,7 @@
             <img src="<%=require('../src/images/footer/phone.svg')%>" alt="телефон" class="footer__img">
             <p class="footer__tel">+7 903 807-08-88</p>
           </a>
-          <a class="footer__call">Заказать консультацию</a>
+          <a class="footer__call">Получить консультацию</a>
         </div>
       </footer>
 
@@ -136,7 +153,7 @@
         <div class="popup__container">
           <button class="popup__close-button" type="button"></button>
           <form class="popup__form" name="popup-form" id="popup-form">
-            <h3 class="popup__title">Заказать консультацию</h3>
+            <h3 class="popup__title">Получить консультацию</h3>
             <p class="popup__subtitle">Мы перезвоним Вам в течение 15 минут</p>
             <section class="popup__form-section">
               <input type="tel" data-validate-field="tel" class="popup__input" id="tel" name="tel" placeholder="+7 (___) ___-__-__" required>
