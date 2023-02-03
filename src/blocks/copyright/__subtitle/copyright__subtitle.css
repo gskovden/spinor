@@ -10,7 +10,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   .copyright__subtitle {
     margin-bottom: 10px;
   }
