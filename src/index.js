@@ -1,8 +1,11 @@
 import './pages/index.css';
 import Inputmask from "../inputmask.es6.js";
 
-const closeButton = document.querySelector('.popup__close-button');
-const popup = document.querySelector('.popup');
+const popups = document.querySelectorAll('.popup');
+const imagePopup = document.querySelector('#imagePopup');
+const callPopup = document.querySelector('#callPopup');
+const thanksPopup = document.querySelector('#thanksPopup');
+const closeButtons = document.querySelectorAll('.popup__close-button');
 const header = document.querySelector('.header');
 const headerBlock = document.querySelector('.header__block');
 const footer = document.querySelector('.footer');
@@ -23,9 +26,8 @@ const politics = document.querySelector('.politics');
 const technical = document.querySelector('.technical');
 const history = document.querySelector('.history');
 const about = document.querySelector('.about');
-const thanksPopup = document.querySelector('#thanksPopup');
-const callPopup = document.querySelector('#callPopup');
 const popupThanksButton = document.querySelector('.popup__thanks-button');
+const popupImg = imagePopup.querySelector('.popup__image');
 
 //маска телефона
 let selector = document.querySelectorAll('input[type="tel"]');
@@ -36,17 +38,24 @@ im.mask(selector);
 window.addEventListener('scroll', () => {
   if (window.scrollHeight !== window.innerHeight && window.scrollY !== 0) {
     // Если прокрутка есть, то делаем блок прозрачным
-    header.classList.add('header_scroll');
+    if (header) {
+      header.classList.add('header_scroll');
+    }
   } else {
 		header.classList.remove('header_scroll');
 	}
 })
 
 //функция открытия попапов
-function openPopup() {
+function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEsc);
 };
+
+//открытие попапа консультации
+function openCallPopup() {
+  openPopup(callPopup);
+}
 
 //закрытие попапа
 const closePopup = function () {
@@ -71,6 +80,30 @@ const closePopupClickOverlay = function (event) {
   }
   closePopup();
 };
+
+//открытие попапа плана
+function planPopup(el) {
+  popupImg.src = el.getAttribute('src');
+  popupImg.alt = el.getAttribute('alt');
+  openPopup(imagePopup);
+}
+
+document.querySelectorAll('.plan__img').forEach(plan =>
+  plan.addEventListener('click', () => 
+    planPopup(plan)
+  ));
+
+//открытие попапа картинки
+function imgPopup(el) {
+  popupImg.src = el.getAttribute('src');
+  popupImg.alt = el.getAttribute('alt');
+  openPopup(imagePopup);
+}
+
+document.querySelectorAll('.photo__img').forEach(image =>
+  image.addEventListener('click', () => 
+    imgPopup(image)
+  ));
 
 //валидация инпута
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
@@ -178,11 +211,13 @@ function burgerClose() {
 }
 
 //обработчики событий
-closeButton.addEventListener('mousedown', closePopup);
-popup.addEventListener('mousedown', closePopupClickOverlay);
-headerCall.addEventListener('click', openPopup);
-footerCall.addEventListener('click', openPopup);
-burgerCall.addEventListener('click', openPopup);
+closeButtons.forEach((item) => 
+  item.addEventListener('click', () => closePopup(item.closest('.popup')))
+);
+popups.forEach((item) => item.addEventListener('click', closePopupClickOverlay));
+headerCall.addEventListener('click', openCallPopup);
+footerCall.addEventListener('click', openCallPopup);
+burgerCall.addEventListener('click', openCallPopup);
 if (popupThanksButton) {
   popupThanksButton.addEventListener('click', closePopup);
 }
@@ -247,40 +282,40 @@ document.getElementById("form").addEventListener("submit", function (event) {
 });
 
 //слайдер фото
-const images = document.querySelectorAll('.photo .photo__slider img');
-const sliderLine = document.querySelector('.photo .photo__slider');
-let count = 0;
-let width;
+// const images = document.querySelectorAll('.photo .photo__slider img');
+// const sliderLine = document.querySelector('.photo .photo__slider');
+// let count = 0;
+// let width;
 
-function init() {
-    width = document.querySelector('.photo').offsetWidth;
-    sliderLine.style.width = width * images.length + 'px';
-    images.forEach(item => {
-        item.style.width = width + 'px';
-        item.style.height = 'auto';
-    });
-    rollSlider();
-}
+// function init() {
+//     width = document.querySelector('.photo').offsetWidth;
+//     sliderLine.style.width = width * images.length + 'px';
+//     images.forEach(item => {
+//         item.style.width = width + 'px';
+//         item.style.height = 'auto';
+//     });
+//     rollSlider();
+// }
 
-init();
-window.addEventListener('resize', init);
+// init();
+// window.addEventListener('resize', init);
 
-document.querySelector('.photo__arrow-right').addEventListener('click', function () {
-    count++;
-    if (count >= images.length) {
-        count = 0;
-    }
-    rollSlider();
-});
+// document.querySelector('.photo__arrow-right').addEventListener('click', function () {
+//     count++;
+//     if (count >= images.length) {
+//         count = 0;
+//     }
+//     rollSlider();
+// });
 
-document.querySelector('.photo__arrow-left').addEventListener('click', function () {
-    count--;
-    if (count < 0) {
-        count = images.length - 1;
-    }
-    rollSlider();
-});
+// document.querySelector('.photo__arrow-left').addEventListener('click', function () {
+//     count--;
+//     if (count < 0) {
+//         count = images.length - 1;
+//     }
+//     rollSlider();
+// });
 
-function rollSlider() {
-    sliderLine.style.transform = 'translate(-' + count * width + 'px)';
-}
+// function rollSlider() {
+//     sliderLine.style.transform = 'translate(-' + count * width + 'px)';
+// }

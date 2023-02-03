@@ -45,7 +45,7 @@
         <li class="header__link"><a class="header__item" href="#about">Обзор помещения</a></li>
         <li class="header__link"><a class="header__item" href="#technical">Технические параметры</a></li>
         <li class="header__link"><a class="header__item" href="#plan">План помещения</a></li>
-        <li class="header__link"><a class="header__item" href="#photo">Фото</a></li>
+        <!-- <li class="header__link"><a class="header__item" href="#photo">Фото</a></li> -->
         <li class="header__link"><a class="header__item" href="#contacts">Контакты</a></li>
       </ul>
       <a class="header__phone" href="tel:+79038070888">
@@ -62,7 +62,7 @@
           <li class="header__link"><a class="header__item" href="#about">Обзор помещения</a></li>
           <li class="header__link"><a class="header__item" href="#technical">Технические параметры</a></li>
           <li class="header__link"><a class="header__item" href="#plan">План помещения</a></li>
-          <li class="header__link"><a class="header__item" href="#photo">Фото</a></li>
+          <!-- <li class="header__link"><a class="header__item" href="#photo">Фото</a></li> -->
           <li class="header__link"><a class="header__item" href="#contacts">Контакты</a></li>
         </ul>
         <a class="header__consult-burger">Получить консультацию</a>
@@ -88,9 +88,9 @@
       <form class="main__form" id="main__form">
         <div class="main__unit">
           <input class="main__input" type="tel" name="tel" id="tel" data-validate-field="tel" placeholder="+7 (___) ___-__-__" required>
-          <button class="main__submit-button" type="submit">Записаться на осмотр</button>
+          <button class="main__submit-button" type="submit">Заказать звонок</button>
         </div>
-        <p class="main__text">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с <a class="main__personal" href="./privacy.html" target="_blank">политикой конфиденциальности</a></p>
+        <p class="main__text">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с <a class="main__personal" href="./privacy" target="_blank">политикой конфиденциальности</a></p>
       </form>
   </section>
 
@@ -98,10 +98,10 @@
     <h2 class="about__title">Обзор помещения</h2>
     <div class="about__block">
       <div class="about__item">
-        <p class="about__text">Помещение находится в <i>г. Тверь по адресу ул. Академика Туполева, д. 111</i>. Город занимает наиболее выгодную с экономической точки зрения расположение - между Москвой и Санкт-Петербургом. Тверь является крупным транспортным узлом, пересечением многих туристических и гастрольных маршрутов.</p>
+        <p class="about__text">Помещение находится в<a href="#contacts" class="about__color">&nbsp;г. Тверь по адресу ул. Академика Туполева, д. 111.&nbsp;</a>Город Тверь занимает наиболее выгодную с экономической точки зрения расположение - между Москвой и Санкт-Петербургом. Тверь является крупным транспортным узлом, пересечением многих туристических и гастрольных маршрутов.</p>
         <p class="about__text">Здание имеет удачное расположение по направлению выезда из города в Заволжском районе. Такая особенность особенно повышает интенсивность потока в выходные и праздничные дни.</p>
-        <p class="about__text">В соседних зданиях расположены <i>2 аптеки, 2 автобусные остановки находятся рядом со зданием</i>, которые формируют высокий трафик в утренние и вечерние часы. Вокруг помещения имеется <i>более 50 парковочных мест</i>. В радиусе 500 метров расположено больше <i>100 жилых домов</i> - благодаря этому обеспечивается высокая конверсия и лучшие продажи.</p>
-        <a class="about__link" href="./history.html">Подробнее о городе Тверь</a>
+        <p class="about__text">В соседних зданиях расположены 2 аптеки, 2 автобусные остановки находятся рядом со зданием, которые формируют высокий трафик в утренние и вечерние часы. Вокруг помещения имеется более <span class="about__bold">50 парковочных мест</span>. В радиусе 500 метров расположено больше 100 жилых домов - благодаря этому обеспечивается высокая конверсия и лучшие продажи.</p>
+        <a class="about__link" href="./history"><img  src="<%=require('../src/images/about/arrow.svg')%>" alt="стрелка" class="about__arrow">Подробнее о городе Тверь</a>
       </div>
     </div>
   </section>
@@ -151,13 +151,13 @@
     <img src="<%=require('../src/images/plan/plan.webp')%>" alt="план помещения" class="plan__img">
   </section>
 
-  <section class="section photo" id="photo">
+  <!-- <section class="section photo" id="photo">
     <h2 class="photo__title">Фото</h2>
     <div class="photo__slider">
     </div>
     <a class="photo__arrow-left"></a>
     <a class="photo__arrow-right"></a>
-  </section>
+  </section> -->
 
   <section class="section contacts" id="contacts">
     <h2 class="contacts__title">Контакты</h2>
@@ -197,7 +197,7 @@
       <textarea type="text" rows="4" class="form__input" name="message" id="message" placeholder="Текст"></textarea>
       <p class="form__text">Напишите Ваш вопрос и мы ответим в ближайшее время</p>
       <button class="form__submit-button" type="submit">Отправить</button>
-      <p class="form__caption">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с <a class="form__personal" href="./privacy.html" target="_blank">политикой конфиденциальности</a></p>
+      <p class="form__caption">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с <a class="form__personal" href="./privacy" target="_blank">политикой конфиденциальности</a></p>
     </form>
   </section>
 
@@ -209,13 +209,13 @@
           <h2 class="footer__title">Спинор</h2>
         </div>
         <p class="footer__address">г. Тверь, ул. Академика Туполева, д. 111</p>
-        <a class="footer__personal" href="./privacy.html" target="_blank">Политика конфиденциальности</a>
+        <a class="footer__personal" href="./privacy" target="_blank">Политика конфиденциальности</a>
       </div>
       <ul class="footer__links">
         <li class="footer__ref"><a class="footer__ref" href="#main">Главная</a></li>
         <li class="footer__ref"><a class="footer__ref" href="#technical">Технические параметры</a></li>
         <li class="footer__ref"><a class="footer__ref" href="#plan">План помещения</a></li>
-        <li class="footer__ref"><a class="footer__ref" href="#photo">Фото</a></li>
+        <!-- <li class="footer__ref"><a class="footer__ref" href="#photo">Фото</a></li> -->
         <li class="footer__ref"><a class="footer__ref" href="#contacts">Контакты</a></li>
       </ul>
       <a class="footer__phone" href="tel:+79038070888">
@@ -244,7 +244,7 @@
           <input type="tel" data-validate-field="tel" class="popup__input" id="tel" name="tel" placeholder="+7 (___) ___-__-__" required>
           <button class="popup__submit-button" type="submit">Отправить</button>
         </section>
-        <p class="popup__text">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с <a class="popup__personal" href="./privacy.html" target="_blank">политикой конфиденциальности</a></p>
+        <p class="popup__text">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с <a class="popup__personal" href="./privacy" target="_blank">политикой конфиденциальности</a></p>
       </form>
     </div>
   </div>
@@ -259,6 +259,13 @@
           <button class="popup__thanks-button" type="submit">Закрыть</button>
         </section>
       </form>
+    </div>
+  </div>
+
+  <div class="popup" id="imagePopup">
+    <div class="popup__container_fullsize">
+        <button class="popup__close-button" type="button"></button>
+        <img class="popup__image">
     </div>
   </div>
 

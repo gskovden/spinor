@@ -1,6 +1,7 @@
 .plan__img {
 	margin: 0;
 	width: 50%;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
